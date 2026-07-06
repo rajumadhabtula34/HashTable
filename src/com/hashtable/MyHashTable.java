@@ -12,6 +12,12 @@ public class MyHashTable<K, V> {
             bucketArray[i] = new MyLinkedList<>();
         }
     }
+    public void remove(K key) {
+
+        int index = getBucketIndex(key);
+
+        bucketArray[index].delete(key);
+    }
 
     private int getBucketIndex(K key) {
         return Math.abs(key.hashCode()) % size;
