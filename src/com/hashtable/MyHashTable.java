@@ -1,29 +1,42 @@
 package com.hashtable;
-
 public class MyHashTable<K, V> {
 
-    private MyLinkedList<K, V> linkedList;
+    private final int size = 10;
+    private MyLinkedList<K, V>[] bucketArray;
 
+    @SuppressWarnings("unchecked")
     public MyHashTable() {
-        linkedList = new MyLinkedList<>();
+        bucketArray = new MyLinkedList[size];
+
+        for (int i = 0; i < size; i++) {
+            bucketArray[i] = new MyLinkedList<>();
+        }
+    }
+
+    private int getBucketIndex(K key) {
+        return Math.abs(key.hashCode()) % size;
     }
 
     public void add(K key, V value) {
 
-        MyMapNode<K, V> node = linkedList.search(key);
+        int index = getBucketIndex(key);
+
+        MyLinkedList<K, V> list = bucketArray[index];
+
+        MyMapNode<K, V> node = list.search(key);
 
         if (node == null) {
-
-            linkedList.append(new MyMapNode<>(key, value));
-
+            list.append(new MyMapNode<>(key, value));
         } else {
-
             Integer count = (Integer) node.getValue();
             node.setValue((V) Integer.valueOf(count + 1));
         }
     }
 
     public void printFrequency() {
-        linkedList.printList();
+
+        for (int i = 0; i < size; i++) {
+            bucketArray[i].printList();
+        }
     }
 }

@@ -1,32 +1,33 @@
-# UC1 - Find Frequency of Words in a Sentence
+# UC2 - Find Frequency of Words in a Paragraph Using Hash Table
 
 ## Problem Statement
 
-Create a Hash Table using a LinkedList to find the frequency of each word in the sentence:
+Create a Hash Table to find the frequency of each word in the following paragraph:
 
-```
-To be or not to be
+```text
+Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations
 ```
 
 ## Objective
 
-Implement a custom Hash Table without using Java's built-in `HashMap`. Store each word as a key and its occurrence count as the value using a LinkedList of custom map nodes.
+Implement a custom Hash Table using Java Generics. Use the `hashCode()` method to calculate the bucket index and store key-value pairs in a LinkedList to handle collisions using Separate Chaining.
 
 ## Features
 
-* Create a custom `MyMapNode<K, V>` to store key-value pairs.
-* Implement a generic `LinkedList` to store map nodes.
-* Search for an existing word in the list.
-* Increment the frequency if the word already exists.
-* Add a new node if the word is encountered for the first time.
-* Display the frequency of all words.
+* Create a custom `MyMapNode<K, V>` for storing key-value pairs.
+* Implement a Hash Table using an array of LinkedLists.
+* Compute the bucket index using `hashCode()`.
+* Handle collisions using Separate Chaining.
+* Count the frequency of each word in the paragraph.
+* Display all words along with their frequencies.
 
 ## Technologies Used
 
 * Java
 * Java Generics
+* Hash Tables
+* Linked Lists
 * Object-Oriented Programming
-* Linked List
 
 ## Project Structure
 
@@ -42,27 +43,37 @@ src/
 
 ## Sample Input
 
-```
-To be or not to be
+```text
+Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations
 ```
 
 ## Sample Output
 
-```
-to = 2
-be = 2
-or = 1
+```text
+paranoids = 1
+are = 2
 not = 1
+paranoid = 3
+because = 2
+they = 2
+but = 1
+keep = 1
+putting = 1
+themselves = 1
+deliberately = 1
+into = 1
+avoidable = 1
+situations = 1
 ```
 
 ## Concepts Covered
 
 * Java Generics
-* Interfaces
-* Custom Linked List
-* Key-Value Pair
-* Word Frequency Counting
-* Basic Hash Table Operations
+* Hash Tables
+* Hash Functions
+* Separate Chaining
+* Collision Handling
+* Linked Lists
 
 ## Author
 
