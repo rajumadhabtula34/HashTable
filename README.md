@@ -1,64 +1,68 @@
-# Data Structures using Java Generics
+# UC1 - Find Frequency of Words in a Sentence
 
-## Overview
+## Problem Statement
 
-This repository contains implementations of Data Structures using Java Generics as part of the BridgeLabz training program.
+Create a Hash Table using a LinkedList to find the frequency of each word in the sentence:
 
-The project demonstrates the implementation of Hash Tables and Binary Search Trees without relying on Java's built-in data structure implementations wherever applicable.
+```
+To be or not to be
+```
+
+## Objective
+
+Implement a custom Hash Table without using Java's built-in `HashMap`. Store each word as a key and its occurrence count as the value using a LinkedList of custom map nodes.
+
+## Features
+
+* Create a custom `MyMapNode<K, V>` to store key-value pairs.
+* Implement a generic `LinkedList` to store map nodes.
+* Search for an existing word in the list.
+* Increment the frequency if the word already exists.
+* Add a new node if the word is encountered for the first time.
+* Display the frequency of all words.
 
 ## Technologies Used
 
-- Java
-- Java Generics
-- Object-Oriented Programming
-- Eclipse IDE
-- Git & GitHub
+* Java
+* Java Generics
+* Object-Oriented Programming
+* Linked List
 
 ## Project Structure
 
-### Section 3: Hash Tables
+```
+src/
+│
+├── INode.java
+├── MyMapNode.java
+├── MyLinkedList.java
+├── MyHashTable.java
+└── HashTableMain.java
+```
 
-- UC1 - Find frequency of words in a sentence using LinkedList
-- UC2 - Find frequency of words in a paragraph using Hash Table
-- UC3 - Remove a word from the Hash Table
+## Sample Input
 
-### Section 4: Binary Search Tree
+```
+To be or not to be
+```
 
-- UC1 - Create a Binary Search Tree
-- UC2 - Create the complete Binary Search Tree and calculate size
-- UC3 - Search an element in the Binary Search Tree
+## Sample Output
+
+```
+to = 2
+be = 2
+or = 1
+not = 1
+```
 
 ## Concepts Covered
 
-- Java Generics
-- Interfaces
-- Linked List
-- Hash Table
-- Hash Function
-- Collision Handling using Separate Chaining
-- Binary Search Tree
-- Recursion
-- Searching
-- Object-Oriented Programming
-
-## Repository Workflow
-
-Each Use Case (UC) is developed in a separate Git branch.
-
-```
-main
-│
-dev
-│
-├── uc1-word-frequency
-├── uc2-word-frequency-paragraph
-├── uc3-remove-word
-├── uc1-create-bst
-├── uc2-complete-bst
-└── uc3-search-node
-```
-
-After successful testing, each UC branch is merged into the `dev` branch and finally into the `main` branch.
+* Java Generics
+* Interfaces
+* Custom Linked List
+* Key-Value Pair
+* Word Frequency Counting
+* Basic Hash Table Operations
 
 ## Author
 
